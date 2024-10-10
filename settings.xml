@@ -1,0 +1,23 @@
+<settings>
+	<servers>
+		<server>
+			<id>ossrh</id>
+			<username>${server_username}</username>
+			<password>${server_password}</password>
+		</server>
+		<server>
+			<id>dev</id>
+			<username>${server_username}</username>
+			<password>${server_password}</password>
+		</server>
+	</servers>
+	<profiles>
+		<profile>
+			<id>ossrh</id>
+			<properties>
+				<gpg.passphrase>${gpg_passphrase}</gpg.passphrase>
+				<gpg.keyname>${gpg_keyname}</gpg.keyname>
+			</properties>
+		</profile>
+	</profiles>
+</settings>
