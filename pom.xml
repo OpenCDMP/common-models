@@ -5,6 +5,7 @@
 
     <groupId>org.opencdmp</groupId>
     <artifactId>common-models</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
 	<name>OpenCDMP Common Models</name>
