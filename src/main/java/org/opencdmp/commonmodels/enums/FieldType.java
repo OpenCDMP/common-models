@@ -26,7 +26,7 @@ public enum FieldType implements EnumValueProvider<String> {
         public static final String Select = "select";
         public static final String BooleanDecision = "booleanDecision";
         public static final String RadioBox = "radiobox";
-        public static final String InternalEntitiesPlans = "InternalEntitiesPlans";
+        public static final String InternalEntitiesPlans = "internalEntitiesPlans";
         public static final String InternalEntitiesDescriptions = "internalEntitiesDescriptions";
         public static final String CheckBox = "checkBox";
         public static final String FreeText = "freetext";

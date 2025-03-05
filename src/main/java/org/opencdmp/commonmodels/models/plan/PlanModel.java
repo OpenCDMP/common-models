@@ -1,7 +1,6 @@
 package org.opencdmp.commonmodels.models.plan;
 
 import org.opencdmp.commonmodels.enums.PlanAccessType;
-import org.opencdmp.commonmodels.enums.PlanStatus;
 import org.opencdmp.commonmodels.models.PlanUserModel;
 import org.opencdmp.commonmodels.models.EntityDoiModel;
 import org.opencdmp.commonmodels.models.FileEnvelopeModel;
@@ -21,7 +20,7 @@ public class PlanModel {
     private String label;
     private String description;
     private PlanAccessType accessType;
-    private PlanStatus status;
+    private PlanStatusModel status;
     private UserModel creator;
     private PlanBlueprintModel planBlueprint;
     private PlanPropertiesModel properties;
@@ -144,11 +143,11 @@ public class PlanModel {
         this.descriptions = descriptions;
     }
 
-    public PlanStatus getStatus() {
+    public PlanStatusModel getStatus() {
         return status;
     }
 
-    public void setStatus(PlanStatus status) {
+    public void setStatus(PlanStatusModel status) {
         this.status = status;
     }
 

@@ -1,7 +1,6 @@
 package org.opencdmp.commonmodels.models.description;
 
 
-import org.opencdmp.commonmodels.enums.DescriptionStatus;
 import org.opencdmp.commonmodels.models.plan.PlanModel;
 import org.opencdmp.commonmodels.models.descriptiotemplate.DescriptionTemplateModel;
 
@@ -14,7 +13,7 @@ public class DescriptionModel {
     private String label;
     private String description;
     private List<String> tags;
-    private DescriptionStatus status;
+    private DescriptionStatusModel status;
     private DescriptionTemplateModel descriptionTemplate;
     private PlanModel plan;
     private UUID sectionId;
@@ -80,11 +79,11 @@ public class DescriptionModel {
         this.plan = plan;
     }
 
-    public DescriptionStatus getStatus() {
+    public DescriptionStatusModel getStatus() {
         return status;
     }
 
-    public void setStatus(DescriptionStatus status) {
+    public void setStatus(DescriptionStatusModel status) {
         this.status = status;
     }
 

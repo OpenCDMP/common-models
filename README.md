@@ -4,7 +4,7 @@
 
 ## Overview
 
-The **common-models** repository contains Java classes that are central to the functioning of the OpenCDMP platform. These models define the data structures used for plans, descriptions, file transformations, repository deposits, and other core features. By using these common models, services in OpenCDMP can maintain consistent communication, ensuring interoperability and data integrity.
+The **common-models** repository contains Java classes that are central to the functioning of the OpenCDMP platform. These models define the data structures used for plans, descriptions, file transformations, repository deposits and evaluators. By using these common models, services in OpenCDMP can maintain consistent communication, ensuring interoperability and data integrity.
 
 ## Key Models
 
