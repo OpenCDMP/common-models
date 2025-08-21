@@ -7,7 +7,8 @@ import java.util.Map;
 public enum PlanBlueprintFieldCategory implements EnumValueProvider<Short> {
     System((short) 0),
     Extra((short) 1),
-    ReferenceType((short) 2);
+    ReferenceType((short) 2),
+    Upload((short) 3);
 
     public static class Names {
         public static final String System = "system";

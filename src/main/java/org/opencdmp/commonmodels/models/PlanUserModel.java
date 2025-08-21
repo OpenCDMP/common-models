@@ -1,6 +1,7 @@
 package org.opencdmp.commonmodels.models;
 
 import org.opencdmp.commonmodels.enums.PlanUserRole;
+import org.opencdmp.commonmodels.models.user.UserModel;
 
 import java.util.UUID;
 

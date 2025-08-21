@@ -15,7 +15,8 @@ import java.util.UUID;
 @JsonSubTypes({
 		@JsonSubTypes.Type(value = SystemFieldModel.class, name = "0"),
 		@JsonSubTypes.Type(value = ExtraFieldModel.class, name = "1"),
-		@JsonSubTypes.Type(value = ReferenceTypeFieldModel.class, name = "2")
+		@JsonSubTypes.Type(value = ReferenceTypeFieldModel.class, name = "2"),
+		@JsonSubTypes.Type(value = UploadFieldModel.class, name = "3")
 })
 public abstract class FieldModel {
 	private UUID id;

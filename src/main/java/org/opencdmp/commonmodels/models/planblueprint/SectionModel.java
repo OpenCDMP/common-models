@@ -10,6 +10,7 @@ public class SectionModel {
 
 	private Integer ordinal;
 	private Boolean hasTemplates;
+	private Boolean canEditDescriptionTemplates;
 
 	private List<FieldModel> fields;
 
@@ -51,6 +52,14 @@ public class SectionModel {
 
 	public void setHasTemplates(Boolean hasTemplates) {
 		this.hasTemplates = hasTemplates;
+	}
+
+	public Boolean getCanEditDescriptionTemplates() {
+		return canEditDescriptionTemplates;
+	}
+
+	public void setCanEditDescriptionTemplates(Boolean canEditDescriptionTemplates) {
+		this.canEditDescriptionTemplates = canEditDescriptionTemplates;
 	}
 
 	public List<FieldModel> getFields() {

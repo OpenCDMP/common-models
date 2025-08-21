@@ -1,4 +1,6 @@
-package org.opencdmp.commonmodels.models;
+package org.opencdmp.commonmodels.models.user;
+
+import org.opencdmp.commonmodels.models.UserContactInfoModel;
 
 import java.util.List;
 import java.util.UUID;
@@ -6,6 +8,7 @@ import java.util.UUID;
 public class UserModel {
     private UUID id;
     private String name;
+    private UserAdditionalInfoModel additionalInfo;
 
     public String getName() {
         return name;
@@ -30,5 +33,13 @@ public class UserModel {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public UserAdditionalInfoModel getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(UserAdditionalInfoModel additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 }

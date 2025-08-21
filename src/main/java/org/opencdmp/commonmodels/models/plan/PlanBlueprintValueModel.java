@@ -1,5 +1,7 @@
 package org.opencdmp.commonmodels.models.plan;
 
+import org.opencdmp.commonmodels.models.FileEnvelopeModel;
+
 import java.time.Instant;
 import java.util.UUID;
 
@@ -8,6 +10,8 @@ public class PlanBlueprintValueModel {
 	private UUID fieldId;
 
 	private String value;
+
+	private FileEnvelopeModel file;
 
 	private Instant dateValue;
 
@@ -27,6 +31,14 @@ public class PlanBlueprintValueModel {
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public FileEnvelopeModel getFile() {
+		return file;
+	}
+
+	public void setFile(FileEnvelopeModel file) {
+		this.file = file;
 	}
 
 	public Instant getDateValue() {

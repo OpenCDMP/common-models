@@ -4,7 +4,7 @@ import org.opencdmp.commonmodels.enums.PlanAccessType;
 import org.opencdmp.commonmodels.models.PlanUserModel;
 import org.opencdmp.commonmodels.models.EntityDoiModel;
 import org.opencdmp.commonmodels.models.FileEnvelopeModel;
-import org.opencdmp.commonmodels.models.UserModel;
+import org.opencdmp.commonmodels.models.user.UserModel;
 import org.opencdmp.commonmodels.models.description.DescriptionModel;
 import org.opencdmp.commonmodels.models.planblueprint.PlanBlueprintModel;
 import org.opencdmp.commonmodels.models.plandescriptiontemplate.PlanDescriptionTemplateModel;
