@@ -1,8 +1,11 @@
 package org.opencdmp.commonmodels.models.reference;
 
+import org.opencdmp.commonmodels.enums.ReferenceTypeFieldDataType;
+
 public class ReferenceFieldModel {
 
     private String code;
+    private ReferenceTypeFieldDataType dataType;
     private String value;
 
 
@@ -14,6 +17,13 @@ public class ReferenceFieldModel {
         this.code = code;
     }
 
+    public ReferenceTypeFieldDataType getDataType() {
+        return dataType;
+    }
+
+    public void setDataType(ReferenceTypeFieldDataType dataType) {
+        this.dataType = dataType;
+    }
 
     public String getValue() {
         return value;

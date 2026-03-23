@@ -1,6 +1,7 @@
 package org.opencdmp.commonmodels.models.reference;
 
 import org.opencdmp.commonmodels.enums.ReferenceSourceType;
+import org.opencdmp.commonmodels.models.referencetype.ReferenceTypeModel;
 
 import java.util.UUID;
 

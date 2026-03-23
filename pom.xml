@@ -120,7 +120,7 @@
 				<configuration>
 				<gpgArguments>
 					<arg>--pinentry-mode</arg>
-					<arg>loopback</arg>
+					<arg>--loopback</arg>
 				</gpgArguments>
 				</configuration>
 				</plugin>

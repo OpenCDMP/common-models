@@ -138,7 +138,7 @@ By including this dependency, your project will have access to all the common mo
 - **Plugins Developer Integration**: [Integration Guide](https://opencdmp.github.io/developers/plugins/)
 ---
 
-## License
+## License 
 
 This repository is licensed under the [EUPL 1.2 License](LICENSE).
 

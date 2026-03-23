@@ -1,4 +1,4 @@
-package org.opencdmp.commonmodels.models.reference;
+package org.opencdmp.commonmodels.models.referencetype;
 
 import java.util.UUID;
 
@@ -9,6 +9,8 @@ public class ReferenceTypeModel {
     private String name;
 
     private String code;
+
+    private ReferenceTypeDefinitionModel definition;
 
     public UUID getId() {
         return id;
@@ -32,5 +34,13 @@ public class ReferenceTypeModel {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public ReferenceTypeDefinitionModel getDefinition() {
+        return definition;
+    }
+
+    public void setDefinition(ReferenceTypeDefinitionModel definition) {
+        this.definition = definition;
     }
 }

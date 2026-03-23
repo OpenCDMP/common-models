@@ -1,6 +1,6 @@
 package org.opencdmp.commonmodels.models.planblueprint;
 
-import org.opencdmp.commonmodels.models.reference.ReferenceTypeModel;
+import org.opencdmp.commonmodels.models.referencetype.ReferenceTypeModel;
 
 public class ReferenceTypeFieldModel extends FieldModel {
 

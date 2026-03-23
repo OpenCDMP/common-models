@@ -1,6 +1,7 @@
 package org.opencdmp.commonmodels.models.planblueprint;
 
 import org.opencdmp.commonmodels.enums.PlanBlueprintStatus;
+import org.opencdmp.commonmodels.models.PlanBlueprintTypeModel;
 
 import java.util.UUID;
 
@@ -12,6 +13,8 @@ public class PlanBlueprintModel {
 	private String description;
 
 	private DefinitionModel definition;
+
+	private PlanBlueprintTypeModel type;
 
 	private PlanBlueprintStatus status;
 
@@ -47,6 +50,14 @@ public class PlanBlueprintModel {
 
 	public void setDefinition(DefinitionModel definition) {
 		this.definition = definition;
+	}
+
+	public PlanBlueprintTypeModel getType() {
+		return type;
+	}
+
+	public void setType(PlanBlueprintTypeModel type) {
+		this.type = type;
 	}
 
 	public PlanBlueprintStatus getStatus() {

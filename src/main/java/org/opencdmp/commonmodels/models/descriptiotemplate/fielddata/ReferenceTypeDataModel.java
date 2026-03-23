@@ -1,6 +1,6 @@
 package org.opencdmp.commonmodels.models.descriptiotemplate.fielddata;
 
-import org.opencdmp.commonmodels.models.reference.ReferenceTypeModel;
+import org.opencdmp.commonmodels.models.referencetype.ReferenceTypeModel;
 
 public class ReferenceTypeDataModel extends BaseFieldDataModel {
 	private Boolean multipleSelect;

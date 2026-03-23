@@ -31,6 +31,7 @@ public class PlanModel {
     private List<PlanDescriptionTemplateModel> descriptionTemplates;
     private FileEnvelopeModel pdfFile;
     private FileEnvelopeModel rdaJsonFile;
+    private FileEnvelopeModel raidJsonFile;
     private FileEnvelopeModel supportingFilesZip;
     private String previousDOI;
     private Instant finalizedAt;
@@ -109,6 +110,14 @@ public class PlanModel {
 
     public void setRdaJsonFile(FileEnvelopeModel rdaJsonFile) {
         this.rdaJsonFile = rdaJsonFile;
+    }
+
+    public FileEnvelopeModel getRaidJsonFile() {
+        return raidJsonFile;
+    }
+
+    public void setRaidJsonFile(FileEnvelopeModel raidJsonFile) {
+        this.raidJsonFile = raidJsonFile;
     }
 
     public FileEnvelopeModel getSupportingFilesZip() {
