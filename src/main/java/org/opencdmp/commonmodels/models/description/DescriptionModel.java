@@ -3,6 +3,7 @@ package org.opencdmp.commonmodels.models.description;
 
 import org.opencdmp.commonmodels.models.plan.PlanModel;
 import org.opencdmp.commonmodels.models.descriptiotemplate.DescriptionTemplateModel;
+import org.opencdmp.commonmodels.models.plandescriptionfields.VisibilityStateModel;
 
 import java.time.Instant;
 import java.util.List;
@@ -16,7 +17,7 @@ public class DescriptionModel {
     private DescriptionStatusModel status;
     private DescriptionTemplateModel descriptionTemplate;
     private PlanModel plan;
-    private UUID sectionId;
+    private String sectionId;
     private Instant createdAt;
     
     private PropertyDefinitionModel properties;
@@ -87,11 +88,11 @@ public class DescriptionModel {
         this.status = status;
     }
 
-    public UUID getSectionId() {
+    public String getSectionId() {
         return sectionId;
     }
 
-    public void setSectionId(UUID sectionId) {
+    public void setSectionId(String sectionId) {
         this.sectionId = sectionId;
     }
 

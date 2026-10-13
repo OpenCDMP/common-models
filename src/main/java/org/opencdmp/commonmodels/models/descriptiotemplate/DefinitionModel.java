@@ -1,6 +1,9 @@
 package org.opencdmp.commonmodels.models.descriptiotemplate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.opencdmp.commonmodels.models.planblueprintdescriptiontemplatefields.FieldModel;
+import org.opencdmp.commonmodels.models.planblueprintdescriptiontemplatefields.FieldSetModel;
+import org.opencdmp.commonmodels.models.planblueprintdescriptiontemplatefields.SectionModel;
 import org.opencdmp.commonmodels.models.plugin.PluginModel;
 
 import java.util.ArrayList;
@@ -8,16 +11,16 @@ import java.util.List;
 
 public class DefinitionModel {
 
-	private List<PageModel> pages;
+	private List<SectionModel> sections;
 
 	private List<PluginModel> plugins;
 
-	public List<PageModel> getPages() {
-		return pages;
+	public List<SectionModel> getSections() {
+		return sections;
 	}
 
-	public void setPages(List<PageModel> pages) {
-		this.pages = pages;
+	public void setSections(List<SectionModel> sections) {
+		this.sections = sections;
 	}
 
 	public List<PluginModel> getPlugins() {
@@ -31,9 +34,9 @@ public class DefinitionModel {
 	@JsonIgnore
 	public List<FieldModel> getAllField(){
 		List<FieldModel> fieldEntities = new ArrayList<>();
-		if (this.getPages() != null){
-			for (PageModel pageModel: this.getPages()) {
-				fieldEntities.addAll(pageModel.getAllField());
+		if (this.getSections() != null){
+			for (SectionModel sectionModel: this.getSections()) {
+				fieldEntities.addAll(sectionModel.getAllField());
 			}
 		}
 		return fieldEntities;
@@ -42,9 +45,9 @@ public class DefinitionModel {
 	@JsonIgnore
 	public List<FieldSetModel> getAllFieldSets(){
 		List<FieldSetModel> fieldSetsEntities = new ArrayList<>();
-		if (this.getPages() != null){
-			for (PageModel pageModel: this.getPages()) {
-				fieldSetsEntities.addAll(pageModel.getAllFieldSets());
+		if (this.getSections() != null){
+			for (SectionModel sectionModel: this.getSections()) {
+				fieldSetsEntities.addAll(sectionModel.getAllFieldSets());
 			}
 		}
 		return fieldSetsEntities;

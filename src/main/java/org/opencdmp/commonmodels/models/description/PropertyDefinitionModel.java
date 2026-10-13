@@ -1,5 +1,7 @@
 package org.opencdmp.commonmodels.models.description;
 
+import org.opencdmp.commonmodels.models.plandescriptionfields.PropertyDefinitionFieldSetModel;
+
 import java.util.Map;
 
 public class PropertyDefinitionModel {

@@ -1,10 +1,13 @@
 package org.opencdmp.commonmodels.models.plan;
 
+import org.opencdmp.commonmodels.models.plandescriptionfields.PropertyDefinitionFieldSetModel;
+
 import java.util.List;
+import java.util.Map;
 
 public class PlanPropertiesModel {
 
-	private List<PlanBlueprintValueModel> planBlueprintValues;
+	private Map<String, PropertyDefinitionFieldSetModel> fieldSets;
 
 	private List<PlanContactModel> contacts;
 
@@ -16,12 +19,12 @@ public class PlanPropertiesModel {
 		this.contacts = contacts;
 	}
 
-	public List<PlanBlueprintValueModel> getPlanBlueprintValues() {
-		return planBlueprintValues;
+	public Map<String, PropertyDefinitionFieldSetModel> getFieldSets() {
+		return fieldSets;
 	}
 
-	public void setPlanBlueprintValues(List<PlanBlueprintValueModel> planBlueprintValues) {
-		this.planBlueprintValues = planBlueprintValues;
+	public void setFieldSets(Map<String, PropertyDefinitionFieldSetModel> fieldSets) {
+		this.fieldSets = fieldSets;
 	}
 }
 

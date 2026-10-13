@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Map;
 
 public enum FieldType implements EnumValueProvider<String> {
+    SYSTEM(Names.System),
     SELECT(Names.Select),
     BOOLEAN_DECISION(Names.BooleanDecision),
     RADIO_BOX(Names.RadioBox),
@@ -19,10 +20,12 @@ public enum FieldType implements EnumValueProvider<String> {
     TAGS(Names.Tags),
     REFERENCE_TYPES(Names.ReferenceTypes),
     DATASET_IDENTIFIER(Names.DatasetIdentifier),
-    VALIDATION(Names.Validation);
+    VALIDATION(Names.Validation),
+    NUMBER(Names.Number);
     private final String value;
 
     public static class Names {
+        public static final String System = "system";
         public static final String Select = "select";
         public static final String BooleanDecision = "booleanDecision";
         public static final String RadioBox = "radiobox";
@@ -38,6 +41,7 @@ public enum FieldType implements EnumValueProvider<String> {
         public static final String DatasetIdentifier = "datasetIdentifier";
         public static final String Validation = "validation";
         public static final String ReferenceTypes = "referenceTypes";
+        public static final String Number = "number";
     }
 
     FieldType(String value) {

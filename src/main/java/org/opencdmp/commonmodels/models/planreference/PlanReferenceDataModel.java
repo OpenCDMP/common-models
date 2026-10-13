@@ -1,15 +1,24 @@
 package org.opencdmp.commonmodels.models.planreference;
 
-import java.util.UUID;
 
 public class PlanReferenceDataModel {
-	private UUID blueprintFieldId;
+	private String blueprintFieldId;
 
-	public UUID getBlueprintFieldId() {
+	private Integer ordinal;
+
+	public String getBlueprintFieldId() {
 		return blueprintFieldId;
 	}
 
-	public void setBlueprintFieldId(UUID blueprintFieldId) {
+	public void setBlueprintFieldId(String blueprintFieldId) {
 		this.blueprintFieldId = blueprintFieldId;
+	}
+
+	public Integer getOrdinal() {
+		return ordinal;
+	}
+
+	public void setOrdinal(Integer ordinal) {
+		this.ordinal = ordinal;
 	}
 }

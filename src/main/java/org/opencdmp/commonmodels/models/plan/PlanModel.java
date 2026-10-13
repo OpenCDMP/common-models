@@ -4,6 +4,7 @@ import org.opencdmp.commonmodels.enums.PlanAccessType;
 import org.opencdmp.commonmodels.models.PlanUserModel;
 import org.opencdmp.commonmodels.models.EntityDoiModel;
 import org.opencdmp.commonmodels.models.FileEnvelopeModel;
+import org.opencdmp.commonmodels.models.plandescriptionfields.VisibilityStateModel;
 import org.opencdmp.commonmodels.models.user.UserModel;
 import org.opencdmp.commonmodels.models.description.DescriptionModel;
 import org.opencdmp.commonmodels.models.planblueprint.PlanBlueprintModel;
@@ -39,6 +40,7 @@ public class PlanModel {
     private Instant updatedAt;
     private Instant createdAt;
     private String language;
+    private List<VisibilityStateModel> visibilityStates;
 
     public UUID getId() {
         return id;
@@ -230,5 +232,13 @@ public class PlanModel {
 
     public void setDescriptionTemplates(List<PlanDescriptionTemplateModel> descriptionTemplates) {
         this.descriptionTemplates = descriptionTemplates;
+    }
+
+    public List<VisibilityStateModel> getVisibilityStates() {
+        return visibilityStates;
+    }
+
+    public void setVisibilityStates(List<VisibilityStateModel> visibilityStates) {
+        this.visibilityStates = visibilityStates;
     }
 }

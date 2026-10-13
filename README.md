@@ -1,155 +1,71 @@
-# Common Models for OpenCDMP
+# OpenCDMP common models
 
-**common-models** is a Java package that provides shared models and classes used across the **OpenCDMP** platform. These models standardize the data structures and communication between the various services and microservices that make up the OpenCDMP ecosystem.
+**common-models** is the Java library with the data models that [OpenCDMP](https://github.com/OpenCDMP/OpenCDMP) and its plugins exchange. When the platform asks a file transformer to export a plan, a deposit service to publish one, or an evaluator to check one, it sends these models, and the plugin returns them.
 
----
+The models cover plans, descriptions, plan blueprints, description templates, references, users, files, plugin configuration, deposit previews, and semantics manifests.
 
-## Overview
+**Documentation**: [Common models](https://opencdmp.github.io/developers/plugins/common-models/)
 
-The **common-models** repository contains Java classes that are central to the functioning of the OpenCDMP platform. These models define the data structures used for Plans, Descriptions, file transformations, repository deposits, and evaluators. By using these common models, services in OpenCDMP can maintain consistent communication, ensuring interoperability and data integrity.
+## Requirements
 
-For detailed information about OpenCDMP architecture and concepts, see the [official documentation](https://opencdmp.github.io/developers/plugins/common-models/).
+- Java 21 or later
+- Maven
 
----
+## What the package contains
 
-## Key Models
+All classes are under `org.opencdmp.commonmodels`:
 
-### 1. `PlanModel.java`
+| Package | Contents |
+| --- | --- |
+| `models` | Shared classes such as `FileEnvelopeModel` (a file passed between services), `EntityDoiModel`, `PlanUserModel`, `TagModel`, and `ConfigurationField` (a configuration field that a plugin declares) |
+| `models.plan` | `PlanModel`, its status, properties, and contacts |
+| `models.description` | `DescriptionModel`, its status, and its answers |
+| `models.planblueprint`, `models.descriptiotemplate`, `models.plandescriptiontemplate` | Plan blueprints, description templates, and the description templates a plan uses in each section |
+| `models.planblueprintdescriptiontemplatefields`, `models.plandescriptionfields` | The questions of a template and the answers to them |
+| `models.reference`, `models.referencetype`, `models.planreference` | References (funders, grants, licences, and so on) and their types |
+| `models.user` | Users and their contact details |
+| `models.plugin` | The values set for a plugin's configuration fields on a blueprint or asset template, and by a user |
+| `models.deposit` | The deposit preview and metadata review contract |
+| `models.semantics` | The semantics manifest |
+| `enums` | Statuses, roles, field types, and the other enumerations |
 
-This class defines the structure for a **Plan** used across OpenCDMP. 
+## Use it in a plugin
 
-**Documentation**: [Plans User Guide](https://opencdmp.github.io/user-guide/plans/)
-
-```java
-public class PlanModel {
-
-    private UUID id;
-    private short version;
-    private String label;
-    private String description;
-    private PlanAccessType accessType;
-    private PlanStatus status;
-    private UserModel creator;
-    private PlanBlueprintModel planBlueprint;
-    private PlanPropertiesModel properties;
-    private List<EntityDoiModel> entityDois;
-    private List<DescriptionModel> descriptions;
-    private List<PlanUserModel> users;
-    private List<PlanReferenceModel> references;
-    private List<PlanDescriptionTemplateModel> descriptionTemplates;
-    private FileEnvelopeModel pdfFile;
-    private FileEnvelopeModel rdaJsonFile;
-    private FileEnvelopeModel supportingFilesZip;
-    private String previousDOI;
-    private Instant finalizedAt;
-    private Instant publicAfter;
-    private Instant updatedAt;
-    private Instant createdAt;
-    private String language;
-
-    // Getters and Setters...
-}
-```
-
-### 2. `DescriptionModel.java`
-
-This class represents the structure for Descriptions related to a Plan, typically providing detailed explanations of the content or components of the plan.
-
-**Documentation**: [Descriptions User Guide](https://opencdmp.github.io/user-guide/descriptions/)
-
-```java
-public class DescriptionModel {
-
-    private UUID id;
-    private String label;
-    private String description;
-    private List<String> tags;
-    private DescriptionStatus status;
-    private DescriptionTemplateModel descriptionTemplate;
-    private PlanModel plan;
-    private UUID sectionId;
-    private Instant createdAt;
-    private PropertyDefinitionModel properties;
-    private List<VisibilityStateModel> visibilityStates;
-
-    // Getters and Setters...
-}
-```
-
-----
-
-## Usages
-
-### 1. File Transformation Models
-
-Models used for pluggable export and import operations (XML, JSON, DOCX, PDF).
-
-**Documentation**: [File Transformation Service](https://opencdmp.github.io/optional-services/file-transformers/)
-
-### 2. Repository Deposit Models
-
-Models used for depositing Plans to external repositories and assigning DOIs.
-
-**Documentation**: [Repository Deposit Service](https://opencdmp.github.io/optional-services/deposit-services/)
-
-
-### 3. Evaluator Models
-
-Models used for validation and evaluation logic within Plans and Descriptions.
-
-**Documentation**: [Evaluators](https://opencdmp.github.io/optional-services/evaluator-services/)
-
-----
-
-## How to Use
-
-The **common-models** repository is a Maven project. To use it in your own OpenCDMP-related service, include it as a dependency in your Maven configuration.
-
-### Maven Dependency
-
-To add **common-models** to your project, include the following in your `pom.xml`:
+Plugins usually get common-models through their base library: [`file-transformer-base`](https://github.com/OpenCDMP/file-transformer-base), [`repository-deposit-base`](https://github.com/OpenCDMP/repository-deposit-base), or [`evaluator-base`](https://github.com/OpenCDMP/evaluator-base). To depend on it directly:
 
 ```xml
 <dependency>
     <groupId>org.opencdmp</groupId>
     <artifactId>common-models</artifactId>
-    <version>1.2.0</version>
+    <version>X.Y.Z</version>
 </dependency>
 ```
 
-By including this dependency, your project will have access to all the common models shared across the OpenCDMP platform.
+Releases are on [Maven Central](https://central.sonatype.com/artifact/org.opencdmp/common-models). Use the version that your plugin base library depends on.
 
-----
+## Build from source
 
-## Key Features
+```bash
+mvn clean install
+```
 
-- **Consistency**: Ensures consistent data structures across services
-- **Reusability**: Common models are reusable across different microservices in the platform
-- **Interoperability**: Simplifies communication between different components of OpenCDMP
-- **Standardization**: Provides a standard approach for handling core concepts like Plans, Descriptions, file operations, and repository deposits
-- **Type Safety**: Strongly typed Java models prevent runtime errors
+This installs version `1.0.0-SNAPSHOT` in your local Maven repository. To install another version, set it first with `mvn versions:set -DnewVersion=<version>`.
 
----
+## Related resources
 
-## Related Resources
+- [Common models](https://opencdmp.github.io/developers/plugins/common-models/): every class and field
+- [Plugin development](https://opencdmp.github.io/developers/plugins/): [file transformers](https://opencdmp.github.io/developers/plugins/file-transformers/), [deposit services](https://opencdmp.github.io/developers/plugins/deposit/), [deposit preview](https://opencdmp.github.io/developers/plugins/deposit-preview/), and [evaluators](https://opencdmp.github.io/developers/plugins/evaluator/)
+- [Run a plugin locally](https://opencdmp.github.io/developers/plugins/run-locally/)
+- [OpenCDMP](https://github.com/OpenCDMP/OpenCDMP)
 
-- **Main Repository**: [OpenCDMP](https://github.com/OpenCDMP/OpenCDMP)
-- **Documentation**: [OpenCDMP Documentation](https://opencdmp.github.io/)
-- **Plugins Developer Integration**: [Integration Guide](https://opencdmp.github.io/developers/plugins/)
----
+## Contributing
 
-## License 
+Report bugs and suggest changes in [GitHub Issues](https://github.com/OpenCDMP/common-models/issues). See [Contributing](https://opencdmp.github.io/developers/contributing/) for how to propose a change.
 
-This repository is licensed under the [EUPL 1.2 License](LICENSE).
+## License
 
----
+common-models is licensed under the [European Union Public Licence (EUPL) v1.2](LICENSE).
 
 ## Contact
 
-For questions or support regarding this repository, please contact:
-
-- **Email**: opencdmp at cite.gr
-
----
-
-*This package is part of the OpenCDMP ecosystem. For general OpenCDMP documentation, visit [opencdmp.github.io](https://opencdmp.github.io).*
+Questions: email opencdmp at cite.gr.

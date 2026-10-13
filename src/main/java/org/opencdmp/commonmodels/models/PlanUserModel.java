@@ -8,7 +8,7 @@ import java.util.UUID;
 public class PlanUserModel {
     private UserModel user;
     private PlanUserRole role;
-    private UUID sectionId;
+    private String sectionId;
 
     public UserModel getUser() {
         return user;
@@ -26,11 +26,11 @@ public class PlanUserModel {
         this.role = role;
     }
 
-    public UUID getSectionId() {
+    public String getSectionId() {
         return sectionId;
     }
 
-    public void setSectionId(UUID sectionId) {
+    public void setSectionId(String sectionId) {
         this.sectionId = sectionId;
     }
 }

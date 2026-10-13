@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class PlanDescriptionTemplateModel {
 	private UUID descriptionTemplateGroupId;
-	private UUID sectionId;
+	private String sectionId;
 
 	public UUID getDescriptionTemplateGroupId() {
 		return descriptionTemplateGroupId;
@@ -14,11 +14,11 @@ public class PlanDescriptionTemplateModel {
 		this.descriptionTemplateGroupId = descriptionTemplateGroupId;
 	}
 
-	public UUID getSectionId() {
+	public String getSectionId() {
 		return sectionId;
 	}
 
-	public void setSectionId(UUID sectionId) {
+	public void setSectionId(String sectionId) {
 		this.sectionId = sectionId;
 	}
 }
